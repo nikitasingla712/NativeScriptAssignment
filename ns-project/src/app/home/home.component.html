@@ -1,0 +1,20 @@
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="Weather Application"></Label>
+</ActionBar>
+    <SearchBar name="searchBar" hint="Enter City here..." [text]=""
+(submit)="onSubmit($event)" color="yellow" backgroundColor="skyblue" textFieldHintColor="whitesmoke" textFieldBackgroundColor="orangered">
+
+<GridLayout class="page">
+    <ListView [items]="WeatherData" class="list-group">
+        <ng-template let-Weather="item">
+            <GridLayout class="list-group-item" rows="auto, auto" columns="50, *">
+               <Label: [text]= "{{Weather.temp_celcius}}°" row="0" col="0">
+                <Label: [text]= "{{Weather.temp_min}}° / {{WeatherData.temp_max}}°" row="0" col="0">
+                <Label: [text]= "Feels Like: {{Weather.temp_feels_like}}°" row="0" col="0">
+                <Label: [text]="{{Weather.name}}" row="0" col="0">
+                <Label: [text]="Humidity: {{Weather.main.humidity}}%" row="0" col="0">
+            </GridLayout>
+        </ng-template>
+    </ListView>
+</GridLayout>
+</SearchBar>
